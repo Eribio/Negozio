@@ -39,8 +39,8 @@
                     </div>
 <div class="footer_menu">
     <ul>
-        <li><a href="/shopping">shop</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/shopping">Shop</a></li>
+        <li><a href="/contact">Contatti</a></li>
     </ul>
 </div>
 </div>

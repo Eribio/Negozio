@@ -31,11 +31,8 @@ $(document).ready(function() {
     // sex è woman man
     // funzione per il filtro dei prezzi
 
-    $('#cazzettiPiccoli').on('click','li', function () {
-        console.log('------------------------------------------------------------------------');
+    $('#provaprova').on('click','li', function () {
 
-        console.log(name);
-        console.log(sex)
         var pd = $(this).attr('value');
         console.log(pd);
 

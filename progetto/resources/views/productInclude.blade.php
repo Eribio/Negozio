@@ -23,13 +23,7 @@
                 </a>
                 <p class="product-price">{{$product->price}}€</p>
 
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <!-- Add to Cart
-                    <div class="add-to-cart-btn">
-                        <a id='addcart' value="{{$product->id}}" href="#" class="btn essence-btn">Add to Cart</a>
-                    </div> -->
-                </div>
+
             </div>
         </div>
     </div>

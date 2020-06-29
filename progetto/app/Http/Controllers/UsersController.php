@@ -17,9 +17,6 @@ class UsersController extends Controller
      */
     public function index()
     {
-
-
-        //return view('/adress', compact('addresses'));
     }
 
     /**
@@ -115,7 +112,7 @@ class UsersController extends Controller
         if(! $request->filled('password'))
         {
             $user->fill($input)->save();
-             return redirect()->back()->withSuccess('profile updated successfuly!');
+             return redirect()->back()->withSuccess('Profilo aggiornato correttamente!');
         }
         $user->password= bcrypt($request->password);
         $user->fill($input)->save();

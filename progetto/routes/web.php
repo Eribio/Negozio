@@ -63,6 +63,7 @@ Route::get('/shop/{sex}', 'productController@index');
 Route::get('wishlist', 'WishlistController@index');
 
 
+
 Route::get('/shopping', 'productController@collezione');
 
 Route::get('/shop/single-product-details/removefromwish', 'WishlistController@removeFromWish');

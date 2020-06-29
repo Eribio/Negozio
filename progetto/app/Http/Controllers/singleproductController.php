@@ -68,34 +68,6 @@ else
         return view('/single-product-details', compact('details','measure', 'prds'));
     }
 
-    function search (Request $request){
-        session_start();
-        if (isset($_GET['query']))
-        {
-        $query = $request->input('query' );
-        $_SESSION['q']=$query;
-        }
-        else{
-            $query=$_SESSION['q'];
-        }
-        $products = DB::table('product')
-            ->join('category','category.id', '=', 'product.category_id')
-            ->join('gallery','product.id','=','gallery.product_id')
-            ->select('product.name', 'gallery.path' , 'product.id', 'product.price','product.brand')
-        ->where('product.name','like',"%{$query}%",'OR','product.brand','like',"%{$query}%" )
-        ->where('category.name','like',"%{$query}%",'OR','product.brand','like',"%{$query}%" )
-        ->where('product.brand','like',"%{$query}%",'OR','product.brand','like',"%{$query}%" )->paginate(9);
-
-        $carts= DB::table('product')
-            ->join('gallery', 'product.id', '=', 'gallery.product_id')
-            ->join('shopping_cart', 'product.id', '=', 'shopping_cart.product_id')
-            ->select('product.name', 'gallery.path' , 'product.id', 'product.description', 'product.price','product.brand')
-            ->groupby('product.id', 'gallery.product_id')
-            ->get() ;
-
-
-        return view ('search_results' , compact('products' ));
-    }
 
     function addtocart($id,$size) {
 

@@ -39,7 +39,7 @@
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <div class="page-title text-center">
-                    <h2>MY ADDRESSES </h2>
+                    <h2>I miei indirizzi </h2>
                 </div>
             </div>
         </div>
@@ -62,15 +62,15 @@
                     <!-- ##### Single Widget ##### -->
                     <div class="widget catagory mb-50">
                         <!-- Widget Title -->
-                        <h6 class="widget-title mb-30">My Account</h6>
+                        <h6 class="widget-title mb-30">Il mio account</h6>
 
                         <!--  Catagories  -->
                         <div class="catagories-menu">
                             <ul>
-                                <li > <a id="myorders" href="/my_orders" > My Orders</a></li>
-                                <li><a href="/data"> My Data</a></li>
-                                <li><a href="/adress">  My Adresses</a></li>
-                                <li><a href="/my_card">  My Card</a></li>
+                                <li > <a id="myorders" href="/my_orders" > I miei ordini</a></li>
+                                <li><a href="/data"> I miei dati</a></li>
+                                <li><a href="/adress">  I miei indirizzi</a></li>
+                                <li><a href="/my_card">  La mia carta</a></li>
 
                             </ul>
                         </div>
@@ -83,7 +83,7 @@
 
             <div id="d" class="col-12 col-md-8 col-lg-9">
                 <div class="card">
-                    <div class="card-header  bg-secondary text-white">CREDIT CARD </div>
+                    <div class="card-header  bg-secondary text-white">DETTAGLI CARTA </div>
                     <div class="card-body">
 
 
@@ -91,13 +91,13 @@
                         @if (isset($cards))
                             @if (count($cards)>0)
                                 @foreach($cards as $card)
-                                    <p style="color: black; line-height:2px;">Card Number: {{$card->card_number}} </p>
-                                    <p style="color: black; line-height:2px;"> Expiry Date: {{$card->expiry_date}} </p>
+                                    <p style="color: black; line-height:2px;">Numero di carta: {{$card->card_number}} </p>
+                                    <p style="color: black; line-height:2px;"> Scadenza: {{$card->expiry_date}} </p>
                                     <p style="color: black; line-height:2px;"> CVV: {{$card->CVV}} </p>
 
                                 @endforeach
                             @else
-                                <p class="card-text text-black">no cards yet!</p>
+                                <p class="card-text text-black">Nessuna carta presente!</p>
 
                             @endif
                         @endif
@@ -106,10 +106,6 @@
                         <form action="{{route('Payment_method.cazzarola')}}" method="post">
                             @csrf
                             <div id="addcard" class="add card">
-
-
-
-
 
 
                             </div>

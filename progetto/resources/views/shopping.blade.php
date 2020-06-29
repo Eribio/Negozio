@@ -34,7 +34,7 @@
 <!-- ##### Right Side Cart End ##### -->
 
 <!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb_area bg-img" style="background-image: url(/img/bg-img/breadcumb.jpg);">
+<div class="breadcumb_area bg-img" style="background-image: url(public/img/bg-img/breadcumb.jpg);">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -62,62 +62,54 @@
                         <!-- Widget Title -->
 
 
-                        <h6 class="widget-title mb-30">Categories</h6>
+                        <h6 class="widget-title mb-30">Categorie</h6>
 
 
 
-                        <!--  Catagories  -->
+                        <!--  Menu delle categorie  -->
 
                         <div class="catagories-menu">
                             <ul id="menu-content2" class="menu-content collapse show">
 
-                                <!-- Single Item -->
-
-
-
+                                <!-- Prodotti donna  -->
 
                                     <li data-toggle="collapse" data-target="#Woman" class="collapsed">
-                                        <a href="#">Woman</a>
+                                        <a href="#">Donna</a>
                                         <ul class="sub-menu collapse" id="Woman">
-                                            <li id="Dresses" value="/shop/Woman/Dresses"><a href="#">Dresses</a></li>
-                                            <li id="T-Shirt" value="/shop/Woman/T-Shirt"><a href="#">T-Shirts</a></li>
-                                            <li id="Jeans" value="/shop/Woman/Jeans"><a href="#">Jeans</a></li>
-                                            <li id="Skirts" value="/shop/Woman/Skirts"><a href="#">Skirts</a></li>
-                                            <li id="Sweaters" value="/shop/Woman/Sweaters"><a href="#">Sweaters</a></li>
+
+                                            @foreach($prodwom as $prodw)
+                                                <li id="{{$prodw->name}}" value="/shop/Woman/{{$prodw->name}}"><a href="#">{{$prodw->name}}</a></li>
+                                            @endforeach
+
                                         </ul>
                                     </li>
 
 
-
-                            <!-- Single Item -->
+                            <!-- Prodotti uomo-->
 
                                     <li data-toggle="collapse" data-target="#Man" class="collapsed">
-                                        <a href="#">Man</a>
+                                        <a href="#">Uomo</a>
                                         <ul class="sub-menu collapse" id="Man">
-                                            <li  id="Trousers"  value="/shop/Man/Trousers"><a href="#">Trousers</a></li>
-                                            <li id="Jeans"  value="/shop/Man/Jeans"><a href="#">Jeans</a></li>
-                                            <li  id="T-Shirt" value="/shop/Man/T-Shirt"><a href="#">T-Shirts</a></li>
-                                            <li id="Shirts"  value="/shop/Man/Shirts"><a href="#">Shirts</a></li>
-                                            <li  id="Sweaters" value="/shop/Man/Sweaters"><a href="#">Sweaters</a></li>
+
+                                            @foreach($prodman as $prodm)
+                                                <li  id="{{$prodm->name}}"  value="/shop/Man/{{$prodm->name}}"><a href="#">{{$prodm->name}}</a></li>
+                                            @endforeach
+
                                         </ul>
                                     </li>
 
-
-                            <!-- Single Item -->
+                            <!-- Accessori -->
 
                                     <li data-toggle="collapse" data-target="#Accessories" class="collapsed">
-                                        <a href="#">Accessories</a>
+                                        <a href="#">Accessori</a>
                                         <ul class="sub-menu collapse" id="Accessories">
-                                            <li id="Woman Bags" value="/shop/Accessories/Woman Bags"><a href="#">Bags</a></li>
-                                            <li id="Cap" value="/shop/Accessories/Cap"><a href="#">Caps</a></li>
-                                            <li id="Man Scarf" value="/shop/Accessories/Man Scarf"><a href="#">Scarfs</a></li>
-                                            <li id="Bow Tie" value="/shop/Accessories/Bow Tie"><a href="#">Bowties</a></li>
-                                            <li id="Sunglasses" value="/shop/Accessories/Sunglasses"><a href="#">Sunglasses</a></li>
-                                            <li id="Woman Belt" value="/shop/Accessories/Woman Belt"><a href="#">Belts</a></li>
-                                            <li id="Woman Wallet" value="/shop/Accessories/Woman Wallet"><a href="#">Wallets</a></li>
+
+                                            @foreach($accessori as $acc)
+                                                <li id="{{$acc->name}}" value="/shop/Accessories/{{$acc->name}}"><a href="#">{{$acc->name}}</a></li>
+                                        @endforeach
+
                                         </ul>
                                     </li>
-
                             </ul>
                         </div>
 
@@ -126,38 +118,31 @@
                     <!-- ##### Single Widget ##### -->
                     <div class="widget price mb-50">
                         <!-- Widget Title -->
-                        <h6 class="widget-title mb-30">Filter by</h6>
+                        <h6 class="widget-title mb-30">Filtra per</h6>
                         <!-- Widget Title 2 -->
-                        <p class="widget-title2 mb-30">Price</p>
+                        <p class="widget-title2 mb-30">Prezzo</p>
                         <div class="range-price">
-                            <ul id="cazzettiPiccoli">
+                            <ul id="provaprova">
 
                                 <li value="/shopping/price1"> <a href="#" > 0 - 25€</a></li>
                                 <li value="/shopping/price2"><a href="#"> 25 - 50€</a></li>
                                 <li value="/shopping/price3"><a href="#"> 50 - 100€</a></li>
                                 <li value="/shopping/price4"><a href="#"> > 100€</a></li>
 
-
-
                             </ul>
                         </div>
                     </div>
 
 
-
-
                     <div class="widget brands mb-50">
-                        <!-- Widget Title 2 -->
-                        <p class="widget-title2 mb-30">Brands</p>
+                        <!-- Marche  -->
+                        <p class="widget-title2 mb-30">Marche</p>
                         <div class="widget-desc">
                             <ul id="canePazzoPazzoCane">
-                                <li value="/shopping/brand/Levis"><a href="#">Levi's</a></li>
-                                <li value="/shopping/brand/Mango"><a href="#">Mango</a></li>
-                                <li value="/shopping/brand/Bershka"><a href="#">Bershka</a></li>
-                                <li value="/shopping/brand/Napapijri" ><a href="#">Napapijri</a></li>
-                                <li  value="/shopping/brand/Nike"><a href="#">Nike</a></li>
-                                <li  value="/shopping/brand/Adidas"><a href="#">Adidas</a></li>
-                                <li  value="/shopping/brand/Pirex"><a href="#">Pirex</a></li>
+
+                                @foreach($brands as $brand)
+                                <li value="/shopping/brand/{{$brand -> brand}}"><a href="#">{{$brand -> brand}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

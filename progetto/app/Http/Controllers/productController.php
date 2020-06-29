@@ -21,7 +21,40 @@ class productController extends Controller
 
         if($request->ajax())             return view('productInclude', compact('products'))->render();
 
-        return view('/shop', compact('products'));
+        $brands= DB::table('product')
+            ->select('brand')
+            ->groupBy('brand')
+            ->get();
+
+        $donna ="Woman";
+        $uomo = "Man";
+        $acc = "Accessories";
+
+        $prodwom = DB::table('category')
+            ->select('name')
+            ->where('type','=', $donna)
+            ->groupBy('name')
+            ->get();
+
+        $prodman = DB::table('category')
+            ->select('name')
+            ->where('type','=', $uomo)
+            ->groupBy('name')
+            ->get();
+
+        $accessori = DB::table('category')
+            ->select('name')
+            ->where('type','=', $acc)
+            ->groupBy('name')
+            ->get();
+
+        return view('/shop')
+            ->with(compact('products'))
+            ->with(compact('brands'))
+            ->with(compact('prodwom'))
+            ->with(compact('prodman'))
+            ->with(compact('accessori'));
+
 
     }
     function collezione(Request $request) {
@@ -36,7 +69,40 @@ class productController extends Controller
         if($request->ajax())             return view('productInclude', compact('products'))->render();
 
 
-        return view('/shopping', compact('products'));
+        $donna ="Woman";
+        $uomo = "Man";
+        $acc = "Accessories";
+
+        $prodwom = DB::table('category')
+            ->select('name')
+            ->where('type','=', $donna)
+            ->groupBy('name')
+            ->get();
+
+        $prodman = DB::table('category')
+            ->select('name')
+            ->where('type','=', $uomo)
+            ->groupBy('name')
+            ->get();
+
+        $accessori = DB::table('category')
+            ->select('name')
+            ->where('type','=', $acc)
+            ->groupBy('name')
+            ->get();
+
+        $brands= DB::table('product')
+          ->select('brand')
+            ->groupBy('brand')
+          ->get();
+
+        return view('/shopping')
+            ->with(compact('products'))
+            ->with(compact('brands'))
+            ->with(compact('prodwom'))
+            ->with(compact('prodman'))
+            ->with(compact('accessori'));
+
 
     }
 

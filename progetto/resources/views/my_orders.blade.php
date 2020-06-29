@@ -39,7 +39,7 @@
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <div class="page-title text-center">
-                    <h2>MY ORDERS </h2>
+                    <h2>I MIEI ORDINI </h2>
                 </div>
             </div>
         </div>
@@ -62,15 +62,15 @@
                     <!-- ##### Single Widget ##### -->
                     <div class="widget catagory mb-50">
                         <!-- Widget Title -->
-                        <h6 class="widget-title mb-30">My Account</h6>
+                        <h6 class="widget-title mb-30">Il mio account</h6>
 
                         <!--  Catagories  -->
                         <div class="catagories-menu">
                             <ul>
-                                <li > <a id="myorders" href="/my_orders" > My Orders</a></li>
-                                <li><a href="{{route('users.edit')}}"> My Data</a></li>
-                                <li><a href="/adress">  My Adresses</a></li>
-                                <li><a href="/my_card">  My Card</a></li>
+                                <li > <a id="myorders" href="/my_orders" > I miei ordini</a></li>
+                                <li><a href="{{route('users.edit')}}"> I miei dati</a></li>
+                                <li><a href="/adress"> I miei indirizzi</a></li>
+                                <li><a href="/my_card">  La mia carta</a></li>
 
                             </ul>
                         </div>
@@ -84,10 +84,10 @@
                 @if( !$flag)
                     <div class="card" style="display:inline-block; width: 400px;">
 
-                        <div class="card-header  bg-secondary text-white"> Order#</div>
+                        <div class="card-header  bg-secondary text-white"> Ordine#</div>
                         <div class="card-body">
 
-                            <p style="color: black; line-height:7px;"> No orders yet!</p>
+                            <p style="color: black; line-height:7px;"> Nessun ordine ancora!</p>
 
                         </div>
                     </div >
@@ -104,13 +104,13 @@
                                     <hr>
                                     @foreach($ods[$order->id] as $od)
                                         <table  >
-                                            <tr><td>Product:</td><td> </td> </td></td></tr>
+                                            <tr><td>Prodotto:</td><td> </td> </td></td></tr>
                                             <tr >
                                                 <td rowspan="3"> <img  style="height: 100px;" src="{{asset('storage/img/'.$od->path.'.jpg')}}"> </td>
                                                 <td style="padding:0 15px 0 15px;">
-                                                    Name:  {{$od->name}} <br>
-                                                    Brand:    {{$od->brand}}<br>
-                                                    Price:    {{$od->price}}
+                                                    <b>Nome: </b> {{$od->name}} <br>
+                                                    <b>Marca:</b>    {{$od->brand}}<br>
+                                                    <b>Prezzo:   </b> {{$od->price}}
                                                 </td>
                                                 <td>
 

@@ -57,7 +57,7 @@
                  <!-- Select Box -->
             @if(empty($measure[0]))
                 <div class="cart-fav-box d-flex align-items-center">
-                    <h4> This product is not available </h4>
+                    <h4> Questo prodotto non è disponibile! </h4>
                     <div class="product-favourite ml-4" id="whisheshandler">
                         @if(empty($wishlist))
                             <a class="favme fa fa-heart" id="add"></a>
@@ -81,7 +81,7 @@
                 <!-- Cart & Favourite Box -->
                 <div class="cart-fav-box d-flex align-items-center">
                     <!--Cart -->
-                    <button id="addcart" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
+                    <button id="addcart" name="addtocart" value="5" class="btn essence-btn">Aggiungi al carrello</button>
                     <!-- Favourite -->
 
                     <div class="product-favourite ml-4" id="whisheshandler" >
@@ -103,7 +103,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h2>Suggested</h2>
+                        <h2>Articoli simili</h2>
                     </div>
                 </div>
             </div>

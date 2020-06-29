@@ -30,13 +30,13 @@
 </div>
 
 <section class="welcome_area bg-img background-overlay" style="background-image: url(
-   /img/bg-img/bg-1.jpg);">
+   public/img/bg-img/breadcumb.jpg);">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <div class="hero-content">
-                    <h2>New Collection</h2>
-                    <a href="/shopping" class="btn essence-btn">view collection</a>
+                    <h2>Nuova Collezione</h2>
+                    <a href="/shopping" class="btn essence-btn">Vedi collezione</a>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading text-center">
-                    <h2>Popular Woman Products</h2>
+                    <h2>Popolari Donna</h2>
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading text-center">
-                    <h2>Popular Man Products</h2>
+                    <h2>Popolari Uomo</h2>
                 </div>
             </div>
         </div>
@@ -134,7 +134,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading text-center">
-                    <h2>Popular Accessories</h2>
+                    <h2>Accessori più venduti</h2>
                 </div>
             </div>
         </div>

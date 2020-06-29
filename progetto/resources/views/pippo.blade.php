@@ -54,8 +54,8 @@
 
                 <div class="page-title text-center">
 
-                    <h2>Click here to confirm your order! </h2>
-                    <a href="/new-session" class="btn essence-btn">CONFIRM</a>
+                    <h2>Clicca qui per confermare il tuo ordine! </h2>
+                    <a href="/new-session" class="btn essence-btn">CONFERMA</a>
                 </div>
 
             </div>

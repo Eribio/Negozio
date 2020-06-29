@@ -33,12 +33,12 @@
 </div>
 
 <!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb_area bg-img" style="background-image: url(/img/bg-img/breadcumb.jpg">
+<div class="breadcumb_area bg-img" style="background-image: url(public/img/bg-img/breadcumb.jpg)">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <div class="page-title text-center">
-                    <h2>MY DATA </h2>
+                    <h2>I MIEI DATI </h2>
                 </div>
             </div>
         </div>
@@ -61,15 +61,15 @@
                     <!-- ##### Single Widget ##### -->
                     <div class="widget catagory mb-50">
                         <!-- Widget Title -->
-                        <h6 class="widget-title mb-30">My Account</h6>
+                        <h6 class="widget-title mb-30">Il mio account</h6>
 
                         <!--  Catagories  -->
                         <div class="catagories-menu">
                             <ul>
-                                <li > <a id="myorders" href="/my_orders" > My Orders</a></li>
-                                <li><a href="/data"> My Data</a></li>
-                                <li><a href="/adress"> My Adresses</a></li>
-                                <li><a href="/my_card">  My Card</a></li>
+                                <li><a id="myorders" href="/my_orders"> I miei ordini</a></li>
+                                <li><a href="/data"> I miei dati</a></li>
+                                <li><a href="/adress"> I miei indirizzi</a></li>
+                                <li><a href="/my_card"> La mia carta</a></li>
 
                             </ul>
                         </div>
@@ -84,49 +84,56 @@
 
             <div id="d" class="col-12 col-md-8 col-lg-9">
 
-             @if (session('success'))
-  <h6 style="color:green;"> {{session('success')}}</h6>
-                 @else
+                @if (session('success'))
+                    <h6 style="color:green;"> {{session('success')}}</h6>
+                @else
                     <h6 style="color:green;"> {{session('message')}}</h6>
- @endif
+                @endif
 
 
-                <form id ="updatedata" method="POST" action="{{ route('users.update') }}">
-                 @method("patch")
+                <form id="updatedata" method="POST" action="{{ route('users.update') }}">
+                    @method("patch")
                     @csrf
 
                     <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-right">Edit Name</label>
+                        <label for="name" class="col-md-4 col-form-label text-right">Modifica nome</label>
 
                         <div class="col-md-6">
-                            <input id="name" type="text" class="form-control " name="name" value="{{ old('name', $user->name) }}" required autocomplete="name" autofocus>
+                            <input id="name" type="text" class="form-control " name="name"
+                                   value="{{ old('name', $user->name) }}" required autocomplete="name" autofocus>
 
 
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                        <label for="email"
+                               class="col-md-4 col-form-label text-md-right">Indirizzo e-mail</label>
 
                         <div class="col-md-6">
-                            <input id="email" type="email" class="form-control " name="email" value="{{ old('email' , $user->email)}}" required autocomplete="email">
+                            <input id="email" type="email" class="form-control " name="email"
+                                   value="{{ old('email' , $user->email)}}" required autocomplete="email">
 
 
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="phone" class="col-md-4 col-form-label text-md-right">Edit Phone Number</label>
+                        <label for="phone" class="col-md-4 col-form-label text-md-right">Modifica numero di
+                            telefono</label>
 
                         <div class="col-md-6">
-                            <input id="phone" class="form-control" type="text" name="phone"  placeholder="phone"  value="{{ old('phone' , $user->phone)}}"  autofocus>
+                            <input id="phone" class="form-control" type="text" name="phone" placeholder="telefono"
+                                   value="{{ old('phone' , $user->phone)}}" autofocus>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">Edit Password</label>
+                        <label for="password" class="col-md-4 col-form-label text-md-right">Modifica password</label>
 
                         <div class="col-md-6">
-                            <input id="password" type="password" class="form-control  @error('password') is-invalid @enderror" name="password"  placeholder="password"  autocomplete="new-password">
+                            <input id="password" type="password"
+                                   class="form-control  @error('password') is-invalid @enderror" name="password"
+                                   placeholder="password" autocomplete="new-password">
 
                         </div>
                         @error('password')
@@ -137,23 +144,25 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                        <label for="password-confirm"
+                               class="col-md-4 col-form-label text-md-right">{{ __('Conferma password') }}</label>
 
                         <div class="col-md-6">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  placeholder="confirm password"  autocomplete="new-password">
+                            <input id="password-confirm" type="password" class="form-control"
+                                   name="password_confirmation" placeholder="conferma password"
+                                   autocomplete="new-password">
                         </div>
                     </div>
 
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            <p> to modify data click the button below</p>
-                            <input class="btn essence-btn id=clickMe" value="Update Data" onclick="errorDetection();" />
+                            <p> Per modificare i dati cliccare il bottone qui sotto</p>
+                            <input class="btn essence-btn id=clickMe" value="Update Data" onclick="errorDetection();"/>
 
                         </div>
                     </div>
                 </form>
-
 
 
             </div>
@@ -197,23 +206,18 @@
         var p1 = document.getElementById('password').value;
         var p2 = document.getElementById('password-confirm').value;
 
-        if (p1.length<8 && p1.length>0){
-        alert("password must be at least 8 characters!");
-        }
-        else if (p1!=p2)
-        {
+        if (p1.length < 8 && p1.length > 0) {
+            alert("password must be at least 8 characters!");
+        } else if (p1 != p2) {
             alert("passwords don't match");
-        }
-        else if( p1.length=p2.length=0){
-         document.forms["updatedata"].submit();
-        }
-
-        else {
+        } else if (p1.length = p2.length = 0) {
+            document.forms["updatedata"].submit();
+        } else {
             document.forms["updatedata"].submit();
 
         }
 
-}
+    }
 
 
 </script>

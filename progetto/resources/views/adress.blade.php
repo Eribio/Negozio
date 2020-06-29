@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,12 +33,12 @@
 </div>
 
 <!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb_area bg-img" style="background-image: url(/img/bg-img/breadcumb.jpg">
+<div class="breadcumb_area bg-img" style="background-image: url(public/img/bg-img/breadcumb.jpg)">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <div class="page-title text-center">
-                    <h2>MY ADDRESSES </h2>
+                    <h2>I MIEI INDIRIZZI </h2>
                 </div>
             </div>
         </div>
@@ -62,15 +61,15 @@
                     <!-- ##### Single Widget ##### -->
                     <div class="widget catagory mb-50">
                         <!-- Widget Title -->
-                        <h6 class="widget-title mb-30">My Account</h6>
+                        <h6 class="widget-title mb-30">Il mio account</h6>
 
                         <!--  Catagories  -->
                         <div class="catagories-menu">
                             <ul>
-                                <li > <a id="myorders" href="/my_orders" > My Orders</a></li>
-                                <li><a href="/data"> My Data</a></li>
-                                <li><a href="/adress">  My Adresses</a></li>
-                                <li><a href="/my_card">  My Card</a></li>
+                                <li><a id="myorders" href="/my_orders"> I miei ordini</a></li>
+                                <li><a href="/data"> I miei dati</a></li>
+                                <li><a href="/adress"> I miei indirizzi</a></li>
+                                <li><a href="/my_card"> La mia carta</a></li>
 
                             </ul>
                         </div>
@@ -79,47 +78,38 @@
             </div>
 
 
-
-
             <div id="d" class="col-12 col-md-8 col-lg-9">
                 <div class="card">
-                    <div class="card-header  bg-secondary text-white">ADDRESES </div>
+                    <div class="card-header  bg-secondary text-white">INDIRIZZI</div>
                     <div class="card-body">
 
 
+                    @if (isset($addresses)) <!-- se gli indirizzi non sono vuoti-->
+                        @if (count($addresses)>0)
+                            @foreach($addresses as $address)
+                                <p style="color: black; line-height:2px;"> Via: {{$address->street}} </p>
+                                <p style="color: black; line-height:2px;"> Città: {{$address->city}} </p>
+                                <p style="color: black; line-height:2px;"> Provincia: {{$address->province}} </p>
+                                <p style="color: black; line-height:2px;"> CAP: {{$address->cap}}
+                                <hr></p>
 
-                        @if (isset($addresses))
-                            @if (count($addresses)>0)
-                      @foreach($addresses as $address)
-                                        <p style="color: black; line-height:2px;"> Street: {{$address->street}} </p>
-                                        <p style="color: black; line-height:2px;"> City: {{$address->city}} </p>
-                                        <p style="color: black; line-height:2px;"> Province: {{$address->province}} </p>
-                                        <p style="color: black; line-height:2px;"> Cap: {{$address->cap}} <hr></p>
+                            @endforeach
+                        @else
+                            <p class="card-text text-black">Non è prensente ancora nessun indirizzo!</p>
 
-                                @endforeach
-                                @else
-                                    <p class="card-text text-black">no addresses yet!</p>
+                        @endif
+                        @endif
 
-                                @endif
-                                    @endif
-
-                        <input id="addbutton" class="card-link"  type="button" value="Add ▼" onclick="addNewAddress();" />
+                        <input id="addbutton" class="card-link" type="button" value="Add ▼" onclick="addNewAddress();"/>
                         <form action="{{route('users.store')}}" method="post">
                             @csrf
-                        <div id="addadress" class="add address">
+                            <div id="addadress" class="add address">
 
-
-
-
-
-
-                        </div>
+                            </div>
                         </form>
                     </div>
-
-                </div><br>
-
-
+                </div>
+                <br>
 
 
             </div>
@@ -156,28 +146,23 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
-  function addNewAddress()
-  {
-   var x= document.getElementById("addbutton").value;
+    function addNewAddress() {
+        var x = document.getElementById("addbutton").value;
 
-      if (x== "Add ▼"){
+        if (x == "Add ▼") {
 
-          document.getElementById("addadress").innerHTML=('<br><div class="row"> <div class="col-12 mb-3"> <label for="street">Address <span>*</span></label>   <input type="text" class="form-control mb-3" name="street" id="street" value=""> </div> <div class="col-12 mb-3">  <label for="city">Town/City <span>*</span></label> <input type="text" class="form-control" name="city" id="city" value=""> </div>  <div class="col-12 mb-3"> <label for="province">Province <span>*</span></label>  <input type="text" class="form-control"  name="province" id="province" value=""> </div> <div class="col-12 mb-3"> <label for="cap">Postcode <span>*</span></label> <input type="text" class="form-control"  name="cap" id="cap" value=""> </div>  </div> <div class="col-md-6 offset-md-4"><button type="submit" class="btn btn-primary"> Update Data        </button>    </div>');
-
+            document.getElementById("addadress").innerHTML = ('<br><div class="row"> <div class="col-12 mb-3"> <label for="street">Address <span>*</span></label>   <input type="text" class="form-control mb-3" name="street" id="street" value=""> </div> <div class="col-12 mb-3">  <label for="city">Town/City <span>*</span></label> <input type="text" class="form-control" name="city" id="city" value=""> </div>  <div class="col-12 mb-3"> <label for="province">Province <span>*</span></label>  <input type="text" class="form-control"  name="province" id="province" value=""> </div> <div class="col-12 mb-3"> <label for="cap">Postcode <span>*</span></label> <input type="text" class="form-control"  name="cap" id="cap" value=""> </div>  </div> <div class="col-md-6 offset-md-4"><button type="submit" class="btn btn-primary"> Update Data        </button>    </div>');
 
 
+            document.getElementById("addbutton").setAttribute("value", "Add ▲");
 
 
-          document.getElementById("addbutton").setAttribute("value","Add ▲");
+        } else if (x == "Add ▲") {
+            document.getElementById("addbutton").setAttribute("value", "Add ▼");
+            document.getElementById("addadress").innerText = ' ';
 
-
-   }
-   else if (x=="Add ▲"){
-       document.getElementById("addbutton").setAttribute("value","Add ▼");
-          document.getElementById("addadress").innerText=' ';
-
-   }
-  }
+        }
+    }
 </script>
 </body>
 

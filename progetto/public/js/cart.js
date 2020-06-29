@@ -12,7 +12,7 @@ $( document ).ready(function() {
 
             Swal.fire({
                 type: 'success',
-                title: 'Added to Cart!',
+                title: 'Aggiunto al carrello!',
                 showConfirmButton: false,
                 timer: 3000
             });
@@ -21,7 +21,7 @@ $( document ).ready(function() {
                 Swal.fire({
                     type: 'error',
                     title: 'Oops...',
-                    text: 'You have not logged in!',
+                    text: 'Non sei loggato!',
                     footer: '<a href="/login">Log in</a>'
                 })
             });
